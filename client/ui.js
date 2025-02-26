@@ -1,9 +1,11 @@
-// src/ui.js
-
+// client/ui.js
+import { getChannelName, getGuildAvatar } from "./discordClient.js";
+import { db } from "./firebaseConfig.js";
+import { doc, getDoc, collection, getDocs } from "firebase/firestore";
 
 export async function updateUI(discordSdk, auth) {
-    const app = document.querySelector("#app");
-    app.innerHTML = `
+  const app = document.querySelector("#app");
+  app.innerHTML = `
     <header class="header-container">
       <div class="title-container">
       <h2></h2>

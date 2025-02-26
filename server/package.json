@@ -14,6 +14,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.1",
     "express": "^4.18.2",
+    "firebase-admin": "^13.1.0",
     "getting-starter-activity-server": "file:",
     "helmet": "^8.0.0",
     "node-fetch": "^3.3.2"
