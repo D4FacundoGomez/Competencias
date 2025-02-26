@@ -1,5 +1,6 @@
-// src/discordAuth.js
+// client/discordAuth.js
 import { DiscordSDK } from "@discord/embedded-app-sdk";
+import { authenticateWithFirebase } from "./firebaseConfig.js";
 
 export async function setupDiscordSdk() {
   const discordSdk = new DiscordSDK(import.meta.env.VITE_DISCORD_CLIENT_ID);
