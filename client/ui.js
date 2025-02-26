@@ -1,7 +1,9 @@
+
 // client/ui.js
 import { getChannelName, getGuildAvatar } from "./discordClient.js";
 import { db } from "./firebaseConfig.js";
 import { doc, getDoc, collection, getDocs } from "firebase/firestore";
+
 
 export async function updateUI(discordSdk, auth) {
   const app = document.querySelector("#app");
@@ -68,7 +70,5 @@ export async function appendGuildAvatar(discordSdk, auth) {
     guildNameWO.textContent = currentGuild.name;
     title.insertBefore(guildNameWO,title.firstChild);
     }
-    
-    
   }
   
