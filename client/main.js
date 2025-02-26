@@ -1,9 +1,28 @@
-import './style.css'
-import rocketLogo from '/rocket.png'
+// src/main.js
+import rocketLogo from "/rocket.png";
+import "./style.css";
 
-document.querySelector('#app').innerHTML = `
+import { setupDiscordSdk } from "./discordAuth.js";
+import { updateUI } from "./ui.js";
+import { renderDashboard } from "./dashboard.js";
+
+// Mostrar contenido inicial (por ejemplo, logo y título)
+document.querySelector("#app").innerHTML = `
   <div>
     <img src="${rocketLogo}" class="logo" alt="Discord" />
-    <h1>Hello, World!</h1>
+    <h1>Competencia...!</h1>
   </div>
 `;
+
+async function init() {
+  try {
+    const { discordSdk, auth } = await setupDiscordSdk();
+    console.log("Discord SDK is authenticated");
+    await updateUI(discordSdk, auth);
+    // Puedes llamar a renderDashboard(discordSdk) cuando sea necesario
+  } catch (error) {
+    console.error("Error en la inicialización:", error);
+  }
+}
+
+init();

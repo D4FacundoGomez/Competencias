@@ -1,16 +1,17 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --primary-color: #ff9a9e; /* Rosa pastel */
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --secondary-color: #fad0c4; /* Melocotón suave */
+  
+  --accent-color: #fbc2eb; /* Lavanda pálido */
+  
+  --background-color: #fff5f7; /* Fondo muy claro */
+  
+  --text-color: #333;
+  
 }
 
 a {
@@ -23,36 +24,85 @@ a:hover {
 }
 
 body {
-  margin: 0;
+  
   display: flex;
-  place-items: center;
+  flex-direction: column;
+  align-items: center;
+  
   min-width: 320px;
+  
   min-height: 100vh;
+  
+  background: linear-gradient(100deg, var(--background-color), var(--secondary-color));
+  
+  color: var(--text-color);
+  
+  font-family: 'Comic Neue', cursive, sans-serif;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  margin: 0;
+  padding: 0;
+color: var(--primary-color); /* Se corrige la sintaxis */
+  
+font-size: 3.2em;
+  
+line-height: 1;
+  
 }
+.header-container {
 
+position: fixed;
+top: 5px; /* margen superior interno del viewport */
+left: 10px; /* margen izquierdo */
+right:calc(100% - 30px);
+width: calc(100% - 40px); /* resta el margen izquierdo y derecho (20px cada uno) */
+padding: 5px 10px;
+
+background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+border-bottom-left-radius: 40px;
+border-bottom-right-radius: 40px;
+box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+backdrop-filter: blur(10px);
+transition: transform 1s ease, box-shadow 1s ease;
+
+display: flex;
+flex-direction: column;
+align-items: left;
+text-align: top;
+justify-content: flex-start;
+z-index: 1000;
+  
+}
+.guild-logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px; /* Separa el logo del texto */
+  align:left
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+backdrop-filter: blur(10px);
+transition: transform 1s ease, box-shadow 1s ease;
+}
+.logo-container {
+  position: fixed;
+  bottom: 10px;  /* Ajusta el valor según el margen que desees desde abajo */
+  right: 10px;   /* Ajusta el valor para el margen a la derecha */
+  z-index: 1000; /* Asegura que se superponga sobre otros elementos */
+  
+}
+.guild-logo {
+  width: 64px;  /* O el tamaño que prefieras */
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 #app {
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 50px auto 0 auto;
   padding: 2rem;
   text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
 }
 
 button {
