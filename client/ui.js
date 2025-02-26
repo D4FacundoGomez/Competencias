@@ -1,4 +1,3 @@
-// src/ui.js
 
 
 export async function updateUI(discordSdk, auth) {
@@ -66,7 +65,5 @@ export async function appendGuildAvatar(discordSdk, auth) {
     guildNameWO.textContent = currentGuild.name;
     title.insertBefore(guildNameWO,title.firstChild);
     }
-    
-    
   }
   
